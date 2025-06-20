@@ -6,9 +6,10 @@ const app = Vue.createApp({
             button_text: "click here"
         };
     },
-    methods: {}
-    click_button() {
-        this.button_text = "Now you can sign up at the top of the page with that button";
+    methods: {
+        click_button() {
+            this.button_text = "Now you can sign up at the top of the page with that button";
+        }
     },
     mounted() {
         async function getDoggo() {
