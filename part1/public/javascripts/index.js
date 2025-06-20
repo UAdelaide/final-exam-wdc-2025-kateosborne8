@@ -2,9 +2,6 @@
 
 const app = Vue.createApp({
     el: '#app',
-    data: {
-        text: "blah"
-    },
     mounted() {
         async function getDoggo() {
             try {
