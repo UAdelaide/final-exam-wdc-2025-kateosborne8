@@ -55,50 +55,6 @@ router.post('/login', async (req, res) => {
   }
 });
 
-const { username, password } = req.body;
 
-    if (!username || !password) {
-        return res
-            .status(400)
-            .json({ login: false, error: 'Username and password are required' });
-    }
-
-    req.pool.query(
-        'SELECT password_hash FROM Users WHERE username = ?',
-        [username],
-        async function (err, results) {
-            if (err) {
-                console.error('Database error:', err);
-                return res
-                    .status(500)
-                    .json({ login: false, error: 'Database error' });
-            }
-
-            if (results.length === 0) {
-                return res
-                    .status(404)
-                    .json({ login: false, error: 'User not found' });
-            }
-
-            const storedHash = results[0].password;
-
-            try {
-                const match = await bcrypt.compare(password, storedHash);
-                if (!match) {
-                    return res
-                        .status(401)
-                        .json({ login: false, error: 'Incorrect password' });
-                }
-                // password is correct
-                req.session.user = username;
-                return res.json({ login: true, username });
-            } catch (compareErr) {
-                console.error('Bcrypt compare error:', compareErr);
-                return res
-                    .status(500)
-                    .json({ login: false, error: 'Server error' });
-            }
-        }
-    );
 
 module.exports = router;
