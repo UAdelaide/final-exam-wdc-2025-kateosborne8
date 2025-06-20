@@ -10,10 +10,13 @@ var mysql = require('mysql');
 var dbConnectionPool = mysql.createPool({
     host: 'localhost',
     username: 'root',
-    database: ''
-})
+    password: '',
+    database: 'DogWalkService'
+});
 
 var app = express();
+
+app.use
 
 app.use(logger('dev'));
 app.use(express.json());
