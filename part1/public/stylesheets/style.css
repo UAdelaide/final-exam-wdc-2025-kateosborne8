@@ -7,8 +7,9 @@ body {
 
 #app {
   display: flex;
-  felx-direction: column;
-  
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 a {
