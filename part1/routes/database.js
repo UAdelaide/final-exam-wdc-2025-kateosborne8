@@ -9,7 +9,11 @@ router.get('/something', function(req, res, next) {
         var query = 'SELECT * FROM Dogs;';
         connection.query(query, function(err, rows, fields) {
             connection.release();
-            
-        })
-    })
+            if (err) {
+                res.sendStatus(500);
+                return;
+            }
+            res.json(rows);
+        });
+    });
 })
