@@ -2,17 +2,6 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models/db');
 
-router.get('/dogs', async(req, res) => {
-  try {
-      const [rows] = await db.query('SELECT name, size, username AS owner_username FROM Dogs AS d JOIN Users AS u ON d.owner_id = u.user_id;');
-      res.json(rows);
-  } catch (err) {
-      console.error("Database Error: ", err);
-      res.status(500).send("Failed to retreive data from database.");
-  }
-
-});
-
 // GET all walk requests (for walkers to view)
 router.get('/', async (req, res) => {
   try {
