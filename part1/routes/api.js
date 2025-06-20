@@ -11,6 +11,7 @@ router.get('/dogs', async(req, res) => {
         const [rows] = await db.query('SELECT name, size, username AS owner_username FROM Dogs AS d JOIN Users AS u ON d.owner_id = u.user_id;');
         res.json(rows);
     } catch (err) {
+        console.error("Database Error: ", err);
         
     }
 
