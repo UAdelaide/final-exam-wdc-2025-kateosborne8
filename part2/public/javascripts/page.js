@@ -191,7 +191,11 @@ function login(event){
         if (this.readyState == 4 && this.status == 200) {
             const data = JSON.parse(this.responseText);
             alert("Welcome "+ data.message);
-            
+            if (data.role === "walker") {
+                // Go to walkers page
+            } else if (data.role === "owner") {
+                // Go to owners page
+            }
         } else if (this.readyState == 4 && this.status >= 400) {
             alert("Login failed");
         }
