@@ -5,11 +5,6 @@ var vueinst = new Vue({
     data: {
         text: "blah"
     },
-    methods: {
-        blah() {
-            return 'blah blah';
-        }
-    },
     mounted() {
         async function getDoggo() {
             try {
