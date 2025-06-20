@@ -6,12 +6,8 @@ router.get('/', function(req, res, next) {
     res.send('respond with a resource');
 });
 
-router.get('/dogs', async(req, res) {
-    req.pool.getConnection(function(err, connection) {
-        if (err) {
-            res.sendStatus(500);
-            return;
-        }
+router.get('/dogs', async(req, res) => {
+    const [rows] = await
         var query = 'SELECT name, size, username AS owner_username FROM Dogs AS d JOIN Users AS u ON d.owner_id = u.user_id;';
         connection.query(query, function(err, rows, fields) {
             connection.release();
