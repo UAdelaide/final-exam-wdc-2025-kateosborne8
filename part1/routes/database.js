@@ -6,5 +6,7 @@ router.get('/something', function(req, res, next) {
             res.sendStatus(500);
             return;
         }
+        var query = 'SELECT * FROM Dogs;';
+        connection.query
     })
 })
