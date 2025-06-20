@@ -16,4 +16,4 @@ router.get('/something', function(req, res, next) {
             res.json(rows);
         });
     });
-})
+});
