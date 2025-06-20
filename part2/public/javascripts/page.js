@@ -179,8 +179,8 @@ function login(event){
     event.preventDefault();
 
     let user = {
-        user: document.getElementById('username').value,
-        pass: document.getElementById('password').value
+        name: document.getElementById('username').value,
+        password: document.getElementById('password').value
     };
 
     // Create AJAX Request
