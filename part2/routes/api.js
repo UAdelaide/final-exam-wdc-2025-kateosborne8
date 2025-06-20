@@ -40,8 +40,9 @@ router.get('/walkers/summary', async(req, res) => {
 });
 
 router.post('/myDogs', async(req, res) => {
+    if (!req.user.session)
     try {
-        const [rows] = await db.query('SELECT name FROM Dogs WHERE user_id = ?')
+        const [rows] = await db.query('SELECT name FROM Dogs WHERE user_id = ?', userID);
     } catch {
 
     }
