@@ -12,4 +12,4 @@ async function getDoggo() {
     }
 }
 
-document.getElementById("doggo-otd").setAttribute("src")
+document.getElementById("doggo-otd").setAttribute("src", getDoggo());
