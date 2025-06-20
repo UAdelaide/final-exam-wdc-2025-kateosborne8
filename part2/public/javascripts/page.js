@@ -11,6 +11,8 @@ const app = Vue.createApp({
         };
     },
     mounted() {
+        
+
         async function getDoggo() {
             try {
                 const response = await fetch('https://dog.ceo/api/breeds/image/random');
