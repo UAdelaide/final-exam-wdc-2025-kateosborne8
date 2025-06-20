@@ -6,7 +6,7 @@ router.get('/', function(req, res, next) {
     res.send('respond with a resource');
 });
 
-router.get('/dogs', function(req, res, next) {
+router.get('/dogs', async(req, res) {
     req.pool.getConnection(function(err, connection) {
         if (err) {
             res.sendStatus(500);
