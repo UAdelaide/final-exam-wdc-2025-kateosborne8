@@ -35,7 +35,8 @@ var db = mysql.createPool({
           username VARCHAR(50),
           email VARCHAR(50),
           password_hash varchar(255),
-          role enum()
+          role enum('owner', 'walker')
+          created_at timestamp
         )
       `);
 
