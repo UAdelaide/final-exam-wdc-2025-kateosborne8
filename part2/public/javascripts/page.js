@@ -40,7 +40,7 @@ const app = Vue.createApp({
         async function showDoggo() {
             const url = await getDoggo();
             if (url) {
-                var dogs = document.querySelectorAll("dog-photo");
+                var dogs = document.querySelectorAll(".dog-photo");
 
                 .setAttribute("src", url);
             }
