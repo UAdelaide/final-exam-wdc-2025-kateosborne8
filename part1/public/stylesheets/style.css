@@ -40,5 +40,6 @@ a {
 button {
   border-radius: 10px;
   background-color: #9878ef;
-  color:#f1ebe3
+  color: #f1ebe3;
+  border: none;
 }
