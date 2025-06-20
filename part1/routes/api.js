@@ -23,7 +23,7 @@ router.get('/dogs', function(req, res, next) {
     });
 });
 
-router.get('/dogs', function(req, res, next) {
+router.get('/walkrequests/open', function(req, res, next) {
     req.pool.getConnection(function(err, connection) {
         if (err) {
             res.sendStatus(500);
