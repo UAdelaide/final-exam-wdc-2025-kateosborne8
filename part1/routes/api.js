@@ -28,6 +28,17 @@ router.get('/walkrequests/open', async(req, res) => {
 
 });
 
+router.get('/walkers/summary', async(req, res) => {
+    try {
+        const [rows] = await db.query('SELECT u.username AS walker_username FROM Users AS u WHERE role="walker";');
+        res.json(rows);
+    } catch (err) {
+        console.error("Database Error: ", err);
+        res.status(500).send("Failed to retreive data from database.");
+    }
+
+});
+
 router.get('/walkers/summary', function(req, res, next) {
     req.pool.getConnection(function(err, connection) {
         if (err) {
