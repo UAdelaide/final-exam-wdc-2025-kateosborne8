@@ -37,6 +37,7 @@ router.get('/me', (req, res) => {
 
 // POST login (dummy version)
 router.post('/login', async (req, res) => {
+  console.log("Received login POST:", req.body);
   const { name, password } = req.body;
 
   try {
@@ -54,7 +55,7 @@ router.post('/login', async (req, res) => {
       username: rows[0].username,
       role: rows[0].role
     };
-    console.log("Received login POST:", req.body);
+
     res.json({ message: 'Login successful', user: req.session.user });
   } catch (error) {
     res.status(500).json({ error: 'Login failed' });
