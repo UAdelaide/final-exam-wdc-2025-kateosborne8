@@ -33,7 +33,9 @@ var db = mysql.createPool({
         CREATE TABLE IF NOT EXISTS Users (
           user_id INT AUTO_INCREMENT PRIMARY KEY,
           username VARCHAR(50),
-          email VARCHAR(50)
+          email VARCHAR(50),
+          password_hash varchar(255),
+          role enum()
         )
       `);
 
