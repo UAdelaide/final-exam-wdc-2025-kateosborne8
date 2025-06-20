@@ -2,7 +2,7 @@ const mysql = require('mysql2/promise');
 
 var db = mysql.createPool({
     host: 'localhost',
-    username: 'root',
+    user: 'root',
     password: '',
     database: 'DogWalkService'
 });
