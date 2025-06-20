@@ -21,10 +21,10 @@ router.get('/', async (req, res) => {
 
 // POST a new walk request (from owner)
 router.post('/', async (req, res) => {
-  const { dog_id, requested_time, duration_minutes, location } = req.body;
+  const { dog_name, requested_time, duration_minutes, location } = req.body;
 
   try {
-    const [dog_id] = await db.query('SELECT dog_id FROM Dogs WHERE ')
+    const [dog_id] = await db.query('SELECT dog_id FROM Dogs WHERE name=?', [dog_name]);
     const [result] = await db.query(`
       INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location)
       VALUES (?, ?, ?, ?)
