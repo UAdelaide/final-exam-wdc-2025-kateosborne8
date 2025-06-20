@@ -84,6 +84,7 @@ INSERT INTO Dogs (owner_id, name, size) SELECT user_id AS owner_id, 'Beau' AS na
       await db.execute(`
         CREATE TABLE IF NOT EXISTS WalkRequests (
           request_id INT AUTO_INCREMENT PRIMARY KEY,
+          dog_id INT,
           username VARCHAR(50),
           email VARCHAR(50),
           password_hash varchar(255),
