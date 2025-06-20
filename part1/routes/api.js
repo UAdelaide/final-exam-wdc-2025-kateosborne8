@@ -11,7 +11,7 @@ router.get('/dogs', function(req, res, next) {
             res.sendStatus(500);
             return;
         }
-        var query = 'SELECT name, size, owner_username FROM Dogs AS d JOIN Users AS u ON d.owner_id = u.user_id;';
+        var query = 'SELECT name, size FROM Dogs AS d JOIN Users AS u ON d.owner_id = u.user_id;';
         connection.query(query, function(err, rows, fields) {
             connection.release();
             if (err) {
