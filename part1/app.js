@@ -7,7 +7,9 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var mysql = require('mysql');
 
-var dbConnectionPool
+var dbConnectionPool = mysql.createPool({
+    
+})
 
 var app = express();
 
