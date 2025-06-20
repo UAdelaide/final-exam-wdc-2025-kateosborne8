@@ -65,8 +65,8 @@
 
             xmlhttp.onreadystatechange = function() {
                 if (this.readyState === 4 && this.status === 200) {
-                    // Update dogs
-                    user.value = 
+                    // Update user
+                    user.value = JSON.parse(response.text).username;
                 }
             };
 
