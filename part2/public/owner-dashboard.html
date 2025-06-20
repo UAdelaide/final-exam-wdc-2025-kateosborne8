@@ -103,7 +103,7 @@
             xmlhttp.open("POST", "/api/mydogs", true);
             xmlhttp.send();
           } catch (err) {
-            
+            error.value = 'failed to get dogs';
           }
         }
 
