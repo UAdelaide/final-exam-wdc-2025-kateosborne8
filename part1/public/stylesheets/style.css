@@ -42,6 +42,11 @@ a {
   font-size-adjust: 2;
 }
 
+.paragraph {
+  width: 50%;
+  text-justify: center;
+}
+
 button {
   border-radius: 20px;
   background-color: #9878ef;
