@@ -218,7 +218,7 @@ function logout(){
         if (this.readyState === 4 && this.status === 200) {
             // Send them back to the home page, rest of logout detail is in route
             window.location.href = '/';
-            alert("")
+            alert("Successfully Logged Out!");
         }
     };
 
