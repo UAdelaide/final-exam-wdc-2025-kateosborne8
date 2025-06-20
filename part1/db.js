@@ -67,12 +67,15 @@ var db = mysql.createPool({
       const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
       if (rows[0].count === 0) {
         await db.execute(`
-          INSERT INTO Users (username, email, password_hash, role) VALUES
-          ('alice123', 'alice@example.com', 'hashed123', 'owner'),
-          ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
-          ('carol123', 'carol@example.com', 'hashed789', 'owner'),
-          ('kateo8', 'kate@example.com', 'hashed888', 'owner'),
-          ('jacob7', 'jacob@example.com', 'hashed700', 'walker');
+          INSERT INTO Dogs (owner_id, name, size) SELECT user_id AS owner_id, 'Max' AS name, 'medium' AS size FROM Users WHERE username='alice123';
+
+INSERT INTO Dogs (owner_id, name, size) SELECT user_id AS owner_id, 'Bella' AS name, 'small' AS size FROM Users WHERE username='carol123';
+
+INSERT INTO Dogs (owner_id, name, size) SELECT user_id AS owner_id, 'Chase' AS name, 'medium' AS size FROM Users WHERE username='kateo8';
+
+INSERT INTO Dogs (owner_id, name, size) SELECT user_id AS owner_id, 'WolfDog' AS name, 'large' AS size FROM Users WHERE username='alice123';
+
+INSERT INTO Dogs (owner_id, name, size) SELECT user_id AS owner_id, 'Beau' AS name, 'large' AS size FROM Users WHERE username='alice123';
         `);
       }
     } catch (err) {
