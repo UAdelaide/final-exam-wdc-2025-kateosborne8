@@ -7,7 +7,4 @@ var dbConnectionPool = mysql.createPool({
     database: 'DogWalkService'
 });
 
-app.use(function(req, res, next) {
-    req.pool = dbConnectionPool;
-    next();
-});
+module.exports
