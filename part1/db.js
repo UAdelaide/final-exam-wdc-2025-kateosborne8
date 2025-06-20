@@ -76,6 +76,7 @@ INSERT INTO Dogs (owner_id, name, size) SELECT user_id AS owner_id, 'Chase' AS n
 INSERT INTO Dogs (owner_id, name, size) SELECT user_id AS owner_id, 'WolfDog' AS name, 'large' AS size FROM Users WHERE username='alice123';
 
 INSERT INTO Dogs (owner_id, name, size) SELECT user_id AS owner_id, 'Beau' AS name, 'large' AS size FROM Users WHERE username='alice123';
+
         `);
       }
     } catch (err) {
