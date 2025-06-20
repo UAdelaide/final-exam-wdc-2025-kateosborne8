@@ -30,7 +30,7 @@ router.get('/walkrequests/open', async(req, res) => {
 
 router.get('/walkers/summary', async(req, res) => {
     try {
-        const [rows] = await db.query('SELECT u.username AS walker_username, COUNT(rate.rating_id) AS total_ratings, ROUND(AVG(rate.rating),1) AS average_rating FROM WalkRatings AS rate JOIN Users AS u ON rate.walker_id = u.user_id WHERE u.role="walker" GROUP BY rate.walker_id;');
+        const [rows] = await db.query('SELECT u.username AS walker_username, COUNT(DISTINCT rate.rating_id) AS total_ratings, ROUND(AVG(rate.rating),1) AS average_rating, COUNT(DISTINCT wa.request_id) AS completed_walks FROM WalkRatings AS rate JOIN Users AS u ON rate.walker_id = u.user_id JOIN WalkApplications AS wa ON wa.walker_id = u.user_id JOIN WalkRequests as wr ON wa.request_id = wr.request_id WHERE wa.status="accepted" AND wr.status="completed" GROUP BY rate.walker_id;');
         res.json(rows);
     } catch (err) {
         console.error("Database Error: ", err);
