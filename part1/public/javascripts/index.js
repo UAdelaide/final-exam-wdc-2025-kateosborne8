@@ -1,7 +1,6 @@
 /* LET'S GET A DOGGO! */
 
 const app = Vue.createApp({
-    el: '#app',
     mounted() {
         async function getDoggo() {
             try {
@@ -26,3 +25,4 @@ const app = Vue.createApp({
     }
 });
 
+app.mount('#app');
