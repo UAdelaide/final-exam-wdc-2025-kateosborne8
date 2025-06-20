@@ -190,7 +190,7 @@ function login(event){
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             const data = JSON.parse(this.responseText);
-            alert("Welcome "+ this.responseText);
+            alert("Welcome "+ data.message);
         } else if (this.readyState == 4 && this.status >= 400) {
             alert("Login failed");
         }
