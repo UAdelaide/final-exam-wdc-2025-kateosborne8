@@ -193,6 +193,7 @@ function login(event){
             alert("Welcome "+ data.message);
             if (data.role === "walker") {
                 // Go to walkers page
+                window.location.href = "/"
             } else if (data.role === "owner") {
                 // Go to owners page
             }
