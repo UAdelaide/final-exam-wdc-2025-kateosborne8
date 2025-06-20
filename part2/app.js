@@ -18,7 +18,7 @@ app.use(session({
       httpOnly: true,
       maxAge: 1000 * 60 * 60 // uno hour
     }
-  }));
+}));
 
 
 // Routes
