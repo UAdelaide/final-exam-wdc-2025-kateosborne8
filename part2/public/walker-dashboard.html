@@ -67,7 +67,9 @@
                 if (this.readyState === 4 && this.status === 200) {
                     // Update user
                     const data = JSON.parse(response.text);
-                    user.value = .user_id;
+                    user.value = data.user_id;
+                } else {
+                  
                 }
             };
 
