@@ -6,6 +6,7 @@ async function getDoggo() {
         const data = await response.json();
         return data.message;
     } catch {
-        
+        /* Oh no! No doggo! */
+        return 
     }
 }
