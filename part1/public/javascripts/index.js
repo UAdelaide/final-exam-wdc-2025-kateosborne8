@@ -9,6 +9,7 @@ const app = Vue.createApp({
     methods: {
         click_button() {
             this.button_text = "Now you can sign up at the top of the page with that button";
+            document.getElementById("real-signup").
         }
     },
     mounted() {
