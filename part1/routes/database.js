@@ -7,6 +7,9 @@ router.get('/something', function(req, res, next) {
             return;
         }
         var query = 'SELECT * FROM Dogs;';
-        connection.query(query, function)
+        connection.query(query, function(err, rows, fields) {
+            connection.release();
+            
+        })
     })
 })
