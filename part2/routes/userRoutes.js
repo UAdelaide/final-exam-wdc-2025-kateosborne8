@@ -61,7 +61,7 @@ router.post('/login', async (req, res) => {
     // Send the cookie with their details and message back for teh alert
     res.json({ message: username, user: req.session.user });
   } catch (error) {
-    // If can't even reach 
+    // If something goes wrong reaching server
     res.status(500).json({ error: 'Login failed' });
   }
 });
