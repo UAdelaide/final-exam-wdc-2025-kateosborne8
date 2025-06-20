@@ -29,8 +29,8 @@ var db = mysql.createPool({
       });
 
       // Insert data if table is empty
-      const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
-      if (rows[0].count === 0) {
+      const [rows1] = await db.execute('SELECT COUNT(*) AS count FROM Users');
+      if (rows1[0].count === 0) {
         await db.execute(`
           INSERT INTO Users (username, email, password_hash, role) VALUES
           ('alice123', 'alice@example.com', 'hashed123', 'owner'),
