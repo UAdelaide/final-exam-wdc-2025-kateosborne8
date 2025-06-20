@@ -188,6 +188,7 @@ function login(){
     // Define function to run on response
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
+            const data = 
             alert("Welcome "+this.responseText);
             console.log("sucess");
         } else if (this.readyState == 4 && this.status >= 400) {
