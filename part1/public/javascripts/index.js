@@ -12,3 +12,4 @@ async function getDoggo() {
     }
 }
 
+document.getElementById("doggo")
