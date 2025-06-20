@@ -44,7 +44,19 @@ const app = Vue.createApp({
             }
         }
 
-        function
+        async function showDoggo(dog) {
+            const url = await getDoggo();
+            if (url) {
+                document.getElementById("doggo-otd").setAttribute("src", url);
+            }
+        }
+
+        function doggos() {
+            var dogs = document.querySelectorAll(".dog-photo");
+            dogs.forEach((dog) => {
+                dog.setAttribute("src", url);
+            });
+        }
 
         showDoggo();
     }
