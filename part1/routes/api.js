@@ -9,15 +9,6 @@ router.get('/', function(req, res, next) {
 router.get('/dogs', async(req, res) => {
     const [rows] = await db.query('SELECT name, size, username AS owner_username FROM Dogs AS d JOIN Users AS u ON d.owner_id = u.user_id;');
     res.json(rows);
-        connection.query(query, function(err, rows, fields) {
-            connection.release();
-            if (err) {
-                res.sendStatus(500);
-                return;
-            }
-            res.json(rows);
-        });
-    });
 });
 
 router.get('/walkrequests/open', function(req, res, next) {
