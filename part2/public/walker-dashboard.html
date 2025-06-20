@@ -66,7 +66,8 @@
             xmlhttp.onreadystatechange = function() {
                 if (this.readyState === 4 && this.status === 200) {
                     // Update user
-                    user.value = JSON.parse(response.text).user_id;
+                    const data = JSON.parse(response.text);
+                    user.value = .user_id;
                 }
             };
 
