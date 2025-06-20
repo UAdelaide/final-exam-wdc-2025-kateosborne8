@@ -17,8 +17,9 @@ var dbConnectionPool = mysql.createPool({
 var app = express();
 
 app.use(function(req, res, next) {
-    req.pool
-})
+    req.pool = dbConnectionPool;
+    next();
+});
 
 app.use(logger('dev'));
 app.use(express.json());
