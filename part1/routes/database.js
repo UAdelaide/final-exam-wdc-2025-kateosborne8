@@ -2,6 +2,9 @@ const { router } = require("../app");
 
 router.get('/something', function(req, res, next) {
     req.pool.getConnection( function(err, connection) {
-        
+        if (err) {
+            res.sendStatus(500);
+            return;
+        }
     })
 })
