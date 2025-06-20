@@ -64,7 +64,7 @@ const { username, password } = req.body;
     }
 
     req.pool.query(
-        'SELECT password FROM Users WHERE username = ?',
+        'SELECT password_hash FROM Users WHERE username = ?',
         [username],
         async function (err, results) {
             if (err) {
