@@ -2,6 +2,11 @@ const express = require('express');
 const router = express.Router();
 const db = require('../models/db');
 
+router.get('/ping', (req, res) => {
+  console.log('PINGED!');
+  res.send('pong');
+});
+
 // GET all users (for admin/testing)
 router.get('/', async (req, res) => {
   try {
