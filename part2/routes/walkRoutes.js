@@ -24,6 +24,7 @@ router.post('/', async (req, res) => {
   const { dog_id, requested_time, duration_minutes, location } = req.body;
 
   try {
+    const [dog_id] = awa
     const [result] = await db.query(`
       INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location)
       VALUES (?, ?, ?, ?)
