@@ -216,9 +216,10 @@ function logout(){
 
     xmlhttp.onreadystatechange = function() {
         if (this.readyState === 4 && this.status === 200) {
+            // Send them back to the home page, rest of logout detail is in route
             window.location.href = '/';
         }
-    }
+    };
 
     // Open connection to server & send the post data using a POST request
     xmlhttp.open("POST", "/api/users/logout", true);
