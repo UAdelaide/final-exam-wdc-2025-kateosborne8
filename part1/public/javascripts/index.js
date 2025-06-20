@@ -1,14 +1,16 @@
 /* LET'S GET A DOGGO! */
 
-vueinst new Vue({
+var vueinst new Vue({
     el: '#app',
     data: {
         text: "blah"
     },
     methods: {
-        
+        blah() {
+
+        }
     }
-}
+});
 
 async function getDoggo() {
     try {
