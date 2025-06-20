@@ -7,7 +7,7 @@ var search = null;
 const app = Vue.createApp({
     data() {
         return {
-            dogs: "click here"
+            dogs: []
         };
     },
     mounted() {
