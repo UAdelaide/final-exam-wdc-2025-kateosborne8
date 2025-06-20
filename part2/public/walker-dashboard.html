@@ -57,6 +57,7 @@
 
         async function getUser() {
           try {
+            console.log("getUser called");
             const res = await fetch('/api/users/me', {
               method: 'GET'
             });
