@@ -2,7 +2,12 @@
 
 vueinst new Vue({
     el: '#app',
-    
+    data: {
+        text: "blah"
+    },
+    methods: {
+        
+    }
 }
 
 async function getDoggo() {
