@@ -188,8 +188,10 @@ function login(){
     xmlhttp.onreadystatechange = function() {
         if (this.readyState == 4 && this.status == 200) {
             alert("Welcome "+this.responseText);
+            console.log("sucess");
         } else if (this.readyState == 4 && this.status >= 400) {
             alert("Login failed");
+            console.log("failure");
         }
     };
 
@@ -198,8 +200,6 @@ function login(){
     xmlhttp.open("POST", "/users/login", true);
     xmlhttp.setRequestHeader("Content-type", "application/json");
     xmlhttp.send(JSON.stringify(user));
-
-    console.log(success)
 
 }
 
