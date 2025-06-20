@@ -101,7 +101,7 @@
 
             // Open connection to server & send the post data using a POST request
             xmlhttp.open("POST", "/api/mydogs", true);
-            xmlhttp.send();
+            xmlhttp.send(req.session.user_id);
           } catch {
 
           }
