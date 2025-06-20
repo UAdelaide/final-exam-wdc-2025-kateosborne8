@@ -1,6 +1,6 @@
 /* LET'S GET A DOGGO! */
 
-const vueinst = new Vue({
+const app = Vue.createApp({
     el: '#app',
     data: {
         text: "blah"
