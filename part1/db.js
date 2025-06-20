@@ -87,6 +87,7 @@ INSERT INTO Dogs (owner_id, name, size) SELECT user_id AS owner_id, 'Beau' AS na
           dog_id INT,
           requested_time datetime,
           duration_minutes INT,
+          location
           role enum('owner', 'walker')
           created_at timestamp
         )
