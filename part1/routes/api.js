@@ -19,7 +19,7 @@ router.get('/dogs', async(req, res) => {
 
 router.get('/walkrequests/open', async(req, res) => {
     try {
-        const [rows] = await db.query('SELECT name, size, username AS owner_username FROM Dogs AS d JOIN Users AS u ON d.owner_id = u.user_id;');
+        const [rows] = await db.query('SELECT wr.request_id, d.name AS dog_name, requested_time, duration_minutes, location, u.username AS owner_username FROM WalkRequests AS wr JOIN Dogs AS d ON wr.dog_id = d.dog_id JOIN Users AS u ON u.user_id = d.owner_id WHERE wr.status="open";');
         res.json(rows);
     } catch (err) {
         console.error("Database Error: ", err);
