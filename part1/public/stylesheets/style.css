@@ -33,6 +33,10 @@ a {
   display: none;
 }
 
+#signup-button {
+  display: none;
+}
+
 .title {
   font-size-adjust: 2;
 }
