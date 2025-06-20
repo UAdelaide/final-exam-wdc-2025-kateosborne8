@@ -28,18 +28,6 @@ var db = mysql.createPool({
         database: 'DogWalkService'
       });
 
-      // Create a table if it doesn't exist
-      await db.execute(`
-        CREATE TABLE IF NOT EXISTS Users (
-          user_id INT AUTO_INCREMENT PRIMARY KEY,
-          username VARCHAR(50),
-          email VARCHAR(50),
-          password_hash varchar(255),
-          role enum('owner', 'walker')
-          created_at timestamp
-        )
-      `);
-
       // Insert data if table is empty
       const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
       if (rows[0].count === 0) {
@@ -52,16 +40,6 @@ var db = mysql.createPool({
           ('jacob7', 'jacob@example.com', 'hashed700', 'walker');
         `);
       }
-
-      // Create a table if it doesn't exist
-      await db.execute(`
-        CREATE TABLE IF NOT EXISTS Dogs (
-          dog_id INT AUTO_INCREMENT PRIMARY KEY,
-          owner_id INT
-          name VARCHAR(50),
-          size enum('small', 'medium', 'large')
-        )
-      `);
 
       // Insert data if table is empty
       const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
@@ -79,19 +57,6 @@ INSERT INTO Dogs (owner_id, name, size) SELECT user_id AS owner_id, 'Beau' AS na
 
         `);
       }
-
-      // Create a table if it doesn't exist
-      await db.execute(`
-        CREATE TABLE IF NOT EXISTS WalkRequests (
-          request_id INT AUTO_INCREMENT PRIMARY KEY,
-          dog_id INT,
-          requested_time datetime,
-          duration_minutes INT,
-          location
-          role enum('owner', 'walker')
-          created_at timestamp
-        )
-      `);
 
       // Insert data if table is empty
       const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
