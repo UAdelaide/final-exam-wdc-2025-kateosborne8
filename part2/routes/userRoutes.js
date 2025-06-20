@@ -35,6 +35,38 @@ router.get('/me', (req, res) => {
   res.json(req.session.user);
 });
 
+// POST login
+router.post('/login', async (req, res) => {
+  // Get values from the inputs as variables
+  const { username, password } = req.body;
 
+
+  try {
+  // Query the database using what the user put in
+  const [rows] = await db.query(`
+  SELECT user_id, username, role FROM Users
+  WHERE username = ? AND password_hash = ?
+  `, [username, password]);
+
+
+  // If the query comes back empty, there was no user that matched, therefore say no login for you
+  if (rows.length === 0) {
+  return res.status(401).json({ error: 'Invalid credentials' });
+  }
+  // Create the session with all their info in it
+  req.session.user = {
+  user_id: rows[0].user_id,
+  username: rows[0].username,
+  role: rows[0].role
+  };
+
+
+  // Send the cookie with their details and message back for teh alert
+  res.json({ message: username, user: req.session.user });
+  } catch (error) {
+  // If something goes wrong reaching server
+  res.status(500).json({ error: 'Login failed' });
+  }
+  });
 
 module.exports = router;
