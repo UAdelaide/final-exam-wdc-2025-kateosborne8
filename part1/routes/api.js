@@ -29,7 +29,7 @@ router.get('/walkrequests/open', function(req, res, next) {
             res.sendStatus(500);
             return;
         }
-        var query = 'SELECT wr.request_id, d.name AS dog_name,  FROM WalkRequests AS wr JOIN Dogs AS d ON wr.dog_id = d.dog_id WHERE wr.status="open";';
+        var query = 'SELECT wr.request_id, d.name AS dog_name, requested_time, duration_minutes, location FROM WalkRequests AS wr JOIN Dogs AS d ON wr.dog_id = d.dog_id WHERE wr.status="open";';
         connection.query(query, function(err, rows, fields) {
             connection.release();
             if (err) {
