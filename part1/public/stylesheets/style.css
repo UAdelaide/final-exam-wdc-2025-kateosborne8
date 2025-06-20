@@ -19,4 +19,5 @@ a {
   overflow: hidden;
   object-fit: cover;
   object-position: center;
+  border: 5px solid #9878ef;
 }
