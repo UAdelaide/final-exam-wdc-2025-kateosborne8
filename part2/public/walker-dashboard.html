@@ -60,10 +60,12 @@
             const res = await fetch('/api/users/me', {
               method: 'GET'
             })
+            const username = await.res.json();
 
           } catch (err) {
             return null;
           }
+
         }
 
         async function applyToWalk(requestId) {
