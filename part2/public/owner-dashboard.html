@@ -95,7 +95,7 @@
                 if (this.readyState === 4 && this.status === 200) {
                     // Update dogs
                     const dogs = JSON.parse(this.responseText);
-                    mydogs.value = .name;
+                    mydogs.value = dogs;
                 }
             };
 
