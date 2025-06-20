@@ -35,6 +35,7 @@ a {
 
 #signup-button {
   display: none;
+  transform: scale(50%);
 }
 
 .title {
