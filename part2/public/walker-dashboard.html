@@ -58,8 +58,10 @@
         async function getUser() {
           try {
             const username = await fetch('/api/users/me', {
-              method: 'GET',
+              method: 'GET'
             })
+          } catch (err) {
+            
           }
         }
 
