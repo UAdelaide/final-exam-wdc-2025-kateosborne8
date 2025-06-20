@@ -28,24 +28,6 @@ router.get('/walkrequests/open', async(req, res) => {
 
 });
 
-router.get('/walkrequests/open', function(req, res, next) {
-    req.pool.getConnection(function(err, connection) {
-        if (err) {
-            res.sendStatus(500);
-            return;
-        }
-        var query = 'SELECT wr.request_id, d.name AS dog_name, requested_time, duration_minutes, location, u.username AS owner_username FROM WalkRequests AS wr JOIN Dogs AS d ON wr.dog_id = d.dog_id JOIN Users AS u ON u.user_id = d.owner_id WHERE wr.status="open";';
-        connection.query(query, function(err, rows, fields) {
-            connection.release();
-            if (err) {
-                res.sendStatus(500);
-                return;
-            }
-            res.json(rows);
-        });
-    });
-});
-
 router.get('/walkers/summary', function(req, res, next) {
     req.pool.getConnection(function(err, connection) {
         if (err) {
