@@ -11,7 +11,7 @@ router.get('/something', function(req, res, next) {
             res.sendStatus(500);
             return;
         }
-        var query = 'SELECT name, FROM Dogs;';
+        var query = 'SELECT name, size, owner_username FROM Dogs;';
         connection.query(query, function(err, rows, fields) {
             connection.release();
             if (err) {
