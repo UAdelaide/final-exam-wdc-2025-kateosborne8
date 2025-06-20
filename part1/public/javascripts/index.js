@@ -3,8 +3,8 @@
 const app = Vue.createApp({
     data() {
         return {
-            button_text: "click here";
-        }
+            button_text: "click here"
+        };
     }
     mounted() {
         async function getDoggo() {
