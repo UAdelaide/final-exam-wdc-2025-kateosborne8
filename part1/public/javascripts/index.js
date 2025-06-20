@@ -7,6 +7,8 @@ async function getDoggo() {
         return data.message;
     } catch (err) {
         /* Oh no! No doggo! */
+        alert
         return null;
     }
 }
+
