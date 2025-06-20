@@ -7,7 +7,7 @@ async function getDoggo() {
         return data.message;
     } catch (err) {
         /* Oh no! No doggo! */
-        alert
+        console.log("Failed to retrieve a doggo...");
         return null;
     }
 }
