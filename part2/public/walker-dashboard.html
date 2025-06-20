@@ -59,6 +59,20 @@
         async function getUser() {
           try {
             console.log("getUser called");
+
+            // Create AJAX Request
+            var xmlhttp = new XMLHttpRequest();
+
+            xmlhttp.onreadystatechange = function() {
+                if (this.readyState === 4 && this.status === 200) {
+                    // Update dogs
+                    mydogs.value = JSON.parse(this.responseText);
+                }
+            };
+
+            // Open connection to server & send the post data using a POST request
+            xmlhttp.open("POST", "/api/myDogs", true);
+            xmlhttp.send();
             const res = await fetch('/api/users/me', {
               method: 'GET'
             });
