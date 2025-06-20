@@ -179,7 +179,7 @@ function login(event){
     event.preventDefault();
 
     let user = {
-        name: document.getElementById('username').value,
+        username: document.getElementById('username').value,
         password: document.getElementById('password').value
     };
 
