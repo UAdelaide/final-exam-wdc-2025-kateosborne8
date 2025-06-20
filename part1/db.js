@@ -42,8 +42,8 @@ var db = mysql.createPool({
       }
 
       // Insert data if table is empty
-      const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
-      if (rows[0].count === 0) {
+      const [rows2] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
+      if (rows2[0].count === 0) {
         await db.execute(`
           INSERT INTO Dogs (owner_id, name, size) SELECT user_id AS owner_id, 'Max' AS name, 'medium' AS size FROM Users WHERE username='alice123';
 
@@ -59,8 +59,8 @@ INSERT INTO Dogs (owner_id, name, size) SELECT user_id AS owner_id, 'Beau' AS na
       }
 
       // Insert data if table is empty
-      const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
-      if (rows[0].count === 0) {
+      const [rows3] = await db.execute('SELECT COUNT(*) AS count FROM Users');
+      if (rows3[0].count === 0) {
         await db.execute(`
           INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-10 08:00:00' AS requested_time, 30 AS duration_minutes, 'Parklands' AS location, 'open' AS status FROM Dogs WHERE name='Max';
 
