@@ -156,9 +156,9 @@ section {
 }
 
 .dog-photo {
-    width: 200px;
-    aspect-ratio: 1 / 1;
-    overflow: hidden;
+    width: 200px !important;
+    aspect-ratio: 1 / 1 !important;
+    overflow: hidden !important;
     object-fit: cover;
     object-position: center;
 }
