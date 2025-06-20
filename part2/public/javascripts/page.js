@@ -41,6 +41,9 @@ const app = Vue.createApp({
             const url = await getDoggo();
             if (url) {
                 var dogs = document.querySelectorAll(".dog-photo");
+                dogs.forEach(dog => {
+                    dog.style.display = 'flex';
+                });
 
                 .setAttribute("src", url);
             }
