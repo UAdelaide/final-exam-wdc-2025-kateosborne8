@@ -42,7 +42,7 @@ router.get('/walkers/summary', async(req, res) => {
 router.post('/myDogs', async(req, res) => {
     // IF not logged in, can't get them dogs
     if (!req.session.user) {
-        
+        return res.status(401).json({ error: ''})
     }
     try {
         const [rows] = await db.query('SELECT name FROM Dogs WHERE user_id = ?', userID);
