@@ -15,6 +15,31 @@
 
     <a href="owner-dashboard.html" class="btn btn-outline-primary me-2">Owner Dashboard</a>
     <a href="walker-dashboard.html" class="btn btn-outline-success">Walker Dashboard</a>
+
+    <div id="content">
+
+        <div v-if="auth">{{ userdata }}</div>
+        <div v-else>
+            <form class="pure-form pure-form-aligned">
+                <fieldset>
+                    <div class="pure-control-group">
+                        <label for="name">Username</label>
+                        <input v-model="loginuser" id="name" type="text" placeholder="Username">
+                    </div>
+
+                    <div class="pure-control-group">
+                        <label for="password">Password</label>
+                        <input v-model="loginpass" id="password" type="password" placeholder="Password">
+                    </div>
+
+                    <div class="pure-controls">
+                        <button onclick="loginForm();" type="submit" class="pure-button pure-button-primary">Submit</button>
+                        <!--  Add google sign in div   -->
+                        <div class="g-signin2" data-onsuccess="loginOpenID" data-theme="dark"></div>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
   </div>
 
   <script>
