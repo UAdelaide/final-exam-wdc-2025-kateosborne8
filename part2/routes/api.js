@@ -39,7 +39,13 @@ router.get('/walkers/summary', async(req, res) => {
 
 });
 
-router.post('/myDogs', async)
+router.post('/myDogs', async(req, res) => {
+    try {
+        const [rows] = await db.query
+    } catch {
+
+    }
+})
 
 module.exports = router;
 
