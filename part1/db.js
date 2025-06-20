@@ -62,12 +62,16 @@ INSERT INTO Dogs (owner_id, name, size) SELECT user_id AS owner_id, 'Beau' AS na
       const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
       if (rows[0].count === 0) {
         await db.execute(`
-          INSERT INTO Users (username, email, password_hash, role) VALUES
-          ('alice123', 'alice@example.com', 'hashed123', 'owner'),
-          ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
-          ('carol123', 'carol@example.com', 'hashed789', 'owner'),
-          ('kateo8', 'kate@example.com', 'hashed888', 'owner'),
-          ('jacob7', 'jacob@example.com', 'hashed700', 'walker');
+          INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-10 08:00:00' AS requested_time, 30 AS duration_minutes, 'Parklands' AS location, 'open' AS status FROM Dogs WHERE name='Max';
+
+INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-10 09:30:00' AS requested_time, 45 AS duration_minutes, 'Beachside Ave' AS location, 'accepted' AS status FROM Dogs WHERE name='Bella';
+
+INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-11 10:00:00' AS requested_time, 60 AS duration_minutes, 'Brighton' AS location, 'open' AS status FROM Dogs WHERE name='Chase';
+
+INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-07-07 06:00:00' AS requested_time, 60 AS duration_minutes, 'Somerton' AS location, 'open' AS status FROM Dogs WHERE name='Chase';
+
+INSERT INTO WalkRequests (dog_id, requested_time, duration_minutes, location, status) SELECT dog_id, '2025-06-10 08:00:00' AS requested_time, 100 AS duration_minutes, 'Frosty Mountains' AS location, 'open' AS status FROM Dogs WHERE name='WolfDog';
+
         `);
       }
 
