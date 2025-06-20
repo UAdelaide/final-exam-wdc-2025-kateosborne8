@@ -6,3 +6,5 @@ var dbConnectionPool = mysql.createPool({
     password: '',
     database: 'DogWalkService'
 });
+
+module.exports = dbConnectionPool;
