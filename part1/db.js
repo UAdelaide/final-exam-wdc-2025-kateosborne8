@@ -59,15 +59,12 @@ var db = mysql.createPool({
           dog_id INT AUTO_INCREMENT PRIMARY KEY,
           owner_id INT
           name VARCHAR(50),
-          email VARCHAR(50),
-          password_hash varchar(255),
-          role enum('owner', 'walker')
-          created_at timestamp
+          size enum('small', 'medium', 'large')
         )
       `);
 
       // Insert data if table is empty
-      const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
+      const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Dogs');
       if (rows[0].count === 0) {
         await db.execute(`
           INSERT INTO Users (username, email, password_hash, role) VALUES
