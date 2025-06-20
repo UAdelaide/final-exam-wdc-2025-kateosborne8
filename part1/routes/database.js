@@ -1,4 +1,5 @@
-const { router } = require("../app");
+var express = require('express');
+var router = express.Router();
 
 router.get('/something', function(req, res, next) {
     req.pool.getConnection( function(err, connection) {
