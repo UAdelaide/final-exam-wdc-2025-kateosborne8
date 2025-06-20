@@ -191,10 +191,10 @@ function login(event){
         if (this.readyState == 4 && this.status == 200) {
             const data = JSON.parse(this.responseText);
             alert("Welcome "+ data.message);
-            if (data.role === "walker") {
+            if (data.user.role === "walker") {
                 // Go to walkers page
                 window.location.href = "/walker-dashboard.html";
-            } else if (data.role === "owner") {
+            } else if (data.user.role === "owner") {
                 // Go to owners page
                 window.location.href = "/owner-dashboard.html";
             }
