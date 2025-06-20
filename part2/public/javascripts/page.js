@@ -193,9 +193,10 @@ function login(event){
             alert("Welcome "+ data.message);
             if (data.role === "walker") {
                 // Go to walkers page
-                window.location.href = "/walker-dashboard.html"
+                window.location.href = "/walker-dashboard.html";
             } else if (data.role === "owner") {
                 // Go to owners page
+                window.location.href = "/owner-dashboard.html";
             }
         } else if (this.readyState == 4 && this.status >= 400) {
             alert("Login failed");
