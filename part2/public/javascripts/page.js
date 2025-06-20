@@ -38,10 +38,9 @@ const app = Vue.createApp({
         }
 
         async function showDoggo() {
-            const url = await getDoggo();
-            if (url) {
                 var dogs = document.querySelectorAll(".dog-photo");
                 dogs.forEach((dog) => {
+                    const url = await getDoggo();
                     dog.setAttribute("src", url);
                 });
 
