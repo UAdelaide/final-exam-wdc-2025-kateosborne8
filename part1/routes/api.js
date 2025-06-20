@@ -47,7 +47,7 @@ router.get('/walkers/summary', function(req, res, next) {
             res.sendStatus(500);
             return;
         }
-        var query = 'SELECT * FROM Users WHERE role="walker";';
+        var query = 'SELECT u. FROM Users AS u WHERE role="walker";';
         connection.query(query, function(err, rows, fields) {
             connection.release();
             if (err) {
