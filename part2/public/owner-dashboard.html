@@ -95,7 +95,7 @@
             xmlhttp.onreadystatechange = function() {
                 if (this.readyState === 4 && this.status === 200) {
                     // Update dogs
-                    form.mydogs = JSON.parse(this.responseText);
+                    form.value.mydogs = JSON.parse(this.responseText);
                 }
             };
 
