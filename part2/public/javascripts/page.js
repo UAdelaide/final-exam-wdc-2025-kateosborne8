@@ -4,7 +4,7 @@ var search = null;
 
 
 /* Dog Table */
-
+const app = VTTCue.app()
 
 /*
  * Hides the main part of the page to show the Ask a Question section
