@@ -70,16 +70,9 @@
                 }
             };
 
-            // Open connection to server & send the post data using a POST request
-            xmlhttp.open("POST", "/api/myDogs", true);
+            // Open connection to server and call 
+            xmlhttp.open("GET", "/api/users/me", true);
             xmlhttp.send();
-            const res = await fetch('/api/users/me', {
-              method: 'GET'
-            });
-            const username = await res.json();
-            console.log(username.name);
-            return username;
-
           } catch (err) {
             return null;
           }
