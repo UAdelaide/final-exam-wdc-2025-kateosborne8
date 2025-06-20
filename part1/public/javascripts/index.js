@@ -1,5 +1,10 @@
 /* LET'S GET A DOGGO! */
 
+vueinst new Vue({
+    el: '#app',
+    
+}
+
 async function getDoggo() {
     try {
         const response = await fetch('https://dog.ceo/api/breeds/image/random');
