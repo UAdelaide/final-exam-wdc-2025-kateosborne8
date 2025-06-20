@@ -39,5 +39,7 @@ router.get('/walkers/summary', async(req, res) => {
 
 });
 
+router.post('/myDogs', async)
+
 module.exports = router;
 
