@@ -38,5 +38,7 @@ a {
 }
 
 button {
-  border-radius: 
+  border-radius: 10px;
+  background-color: #9878ef;
+  color:#f1ebe3
 }
