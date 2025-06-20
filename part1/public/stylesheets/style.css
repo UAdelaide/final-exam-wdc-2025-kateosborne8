@@ -5,6 +5,12 @@ body {
   color: #9878ef;
 }
 
+#app {
+  display: flex;
+  felx-direction: column;
+  
+}
+
 a {
   color: #00B7FF;
 }
