@@ -58,13 +58,44 @@
 
   <script>
     const { createApp } = Vue;
-    createApp({
-      data() {
-        return {
-          message: 'Welcome to the Dog Walking Service!'
-        };
+
+createApp({
+  data() {
+    return {
+      message: 'Welcome to the Dog Walking Service!',
+      dogs: []
+    };
+  },
+  async mounted() {
+    try {
+      const response = await fetch('/api/dogs');
+      const dogsData = await response.json();
+
+      // For each dog, add a random image
+      for (let dog of dogsData) {
+        const imageUrl = await this.getDoggo();
+        dog.image = imageUrl;
       }
-    }).mount('#app');
+
+      this.dogs = dogsData;
+
+    } catch (err) {
+      console.error("Failed to load dogs:", err);
+    }
+  },
+  methods: {
+    async getDoggo() {
+      try {
+        const response = await fetch('https://dog.ceo/api/breeds/image/random');
+        const data = await response.json();
+        return data.message;
+      } catch (err) {
+        console.log("Failed to retrieve a doggo...");
+        return null;
+      }
+    }
+  }
+  }).mount('#app');
   </script>
 
   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
