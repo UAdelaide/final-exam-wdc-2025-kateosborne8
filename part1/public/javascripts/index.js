@@ -10,6 +10,7 @@ const app = Vue.createApp({
         click_button() {
             this.button_text = "Now you can sign up at the top of the page with that button";
             document.getElementById("real-signup").style.display = "block";
+            document.getElementById("signup-button").style.display = "block";
         }
     },
     mounted() {
