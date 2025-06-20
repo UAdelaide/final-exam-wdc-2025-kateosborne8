@@ -47,7 +47,7 @@ router.get('/walkers/summary', function(req, res, next) {
             res.sendStatus(500);
             return;
         }
-        var query = 'SELECT wr.request_id, d.name AS dog_name, requested_time, duration_minutes, location, u.username AS owner_username FROM WalkRequests AS wr JOIN Dogs AS d ON wr.dog_id = d.dog_id JOIN Users AS u ON u.user_id = d.owner_id WHERE wr.status="open";';
+        var query = 'SELECT * FROM Users WHERE role="'
         connection.query(query, function(err, rows, fields) {
             connection.release();
             if (err) {
