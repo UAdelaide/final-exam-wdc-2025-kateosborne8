@@ -18,3 +18,6 @@ router.get('/something', function(req, res, next) {
         });
     });
 });
+
+module.exports = router;
+
