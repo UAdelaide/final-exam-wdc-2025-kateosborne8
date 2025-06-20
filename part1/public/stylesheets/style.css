@@ -29,6 +29,10 @@ a {
   border: 5px solid #9878ef;
 }
 
+#real-signup {
+  display: none;
+}
+
 .title {
   font-size-adjust: 2;
 }
