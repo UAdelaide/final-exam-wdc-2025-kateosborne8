@@ -7,9 +7,10 @@ var vueinst = new Vue({
     },
     methods: {
         blah() {
-            
+            return 'blah blah';
         }
-    }
+    },
+    mounted
 });
 
 async function getDoggo() {
