@@ -51,13 +51,14 @@ router.post('/login', async (req, res) => {
     if (rows.length === 0) {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
-
+    // Create the session with all their info in it
     req.session.user = {
       user_id: rows[0].user_id,
       username: rows[0].username,
       role: rows[0].role
     };
 
+    // Send the message 
     res.json({ message: username, user: req.session.user });
   } catch (error) {
     res.status(500).json({ error: 'Login failed' });
