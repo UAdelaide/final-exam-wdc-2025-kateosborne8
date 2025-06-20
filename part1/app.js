@@ -5,6 +5,14 @@ var logger = require('morgan');
 
 var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
+var mysql = require('mysql');
+
+var dbConnectionPool = mysql.createPool({
+    host: 'localhost',
+    username: 'root',
+    password: '',
+    database: 'DogWalkService'
+});
 
 var app = express();
 
