@@ -91,6 +91,7 @@
           try {
             const res = await fetch('/api/mydogs', {
               method: 'POST',
+              body: JSON.stringify( {username: })
             });
           } catch {
 
