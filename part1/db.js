@@ -44,7 +44,12 @@ var db = mysql.createPool({
       const [rows] = await db.execute('SELECT COUNT(*) AS count FROM Users');
       if (rows[0].count === 0) {
         await db.execute(`
-          INSERT INTO Users (username, email, password_hash, role) VALUES ('alice123', 'alice@example.com', 'hashed123', 'owner'), ('bobwalker', 'bob@example.com', 'hashed456', 'walker'), ('carol123', 'carol@example.com', 'hashed789', 'owner'), ('kateo8', 'kate@example.com', 'hashed888', 'owner'), ('jacob7', 'jacob@example.com', 'hashed700', 'walker');
+          INSERT INTO Users (username, email, password_hash, role) VALUES
+          ('alice123', 'alice@example.com', 'hashed123', 'owner'),
+          ('bobwalker', 'bob@example.com', 'hashed456', 'walker'),
+          ('carol123', 'carol@example.com', 'hashed789', 'owner'),
+          ('kateo8', 'kate@example.com', 'hashed888', 'owner'),
+          ('jacob7', 'jacob@example.com', 'hashed700', 'walker');
         `);
       }
     } catch (err) {
