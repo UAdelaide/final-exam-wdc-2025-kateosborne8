@@ -5,8 +5,8 @@ async function getDoggo() {
         const response = await featch('https://dog.ceo/api/breeds/image/random');
         const data = await response.json();
         return data.message;
-    } catch {
+    } catch (err) {
         /* Oh no! No doggo! */
-        return 
+        return null;
     }
 }
