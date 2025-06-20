@@ -47,7 +47,7 @@ router.post('/login', async (req, res) => {
       WHERE username = ? AND password_hash = ?
     `, [username, password]);
 
-    // I
+    // If the query comes back empty, there was no user that matched, therefore say no login for you
     if (rows.length === 0) {
       return res.status(401).json({ error: 'Invalid credentials' });
     }
