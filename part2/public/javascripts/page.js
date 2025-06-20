@@ -40,7 +40,7 @@ const app = Vue.createApp({
         async function showDoggo() {
             const url = await getDoggo();
             if (url) {
-                document.getElementById("doggo-otd").setAttribute("src", url);
+                document.querySelectorAll("dog-").setAttribute("src", url);
             }
         }
 
