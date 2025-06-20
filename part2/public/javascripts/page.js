@@ -44,7 +44,7 @@ const app = Vue.createApp({
             }
         }
 
-        async function showDoggo(dog) {
+        async function showThisDoggo(dog) {
             const url = await getDoggo();
             if (url) {
                 dog.setAttribute("src", url);
@@ -54,11 +54,12 @@ const app = Vue.createApp({
         function doggos() {
             var dogs = document.querySelectorAll(".dog-photo");
             dogs.forEach((dog) => {
-                showDoggo(dog);
+                showThisDoggo(dog);
             });
         }
 
         showDoggo();
+        doggos();
     }
 });
 
