@@ -74,6 +74,7 @@
             xmlhttp.open("GET", "/api/users/me", true);
             xmlhttp.send();
           } catch (err) {
+            user.value = null;
             return null;
           }
 
