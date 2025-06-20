@@ -66,7 +66,7 @@
             xmlhttp.onreadystatechange = function() {
                 if (this.readyState === 4 && this.status === 200) {
                     // Update user
-                    const data = JSON.parse(response.text);
+                    const data = JSON.parse(this.responseText);
                     user.value = data.user_id;
                 } else {
                     user.value = null;
