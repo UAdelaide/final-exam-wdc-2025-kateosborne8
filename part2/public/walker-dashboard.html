@@ -61,6 +61,7 @@
               method: 'GET'
             });
             const username = await res.body;
+            console.log(username);
             return username;
 
           } catch (err) {
