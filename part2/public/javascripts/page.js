@@ -16,8 +16,7 @@ const app = Vue.createApp({
         xhttp.onreadystatechange = function() {
             if(this.readyState == 4 && this.status == 200) {
                 const obj = JSON.parse(this.responseText);
-
-                vueinst.listings = obj;
+                app.dogs = obj;
             }
         };
 
