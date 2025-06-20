@@ -15,8 +15,8 @@ async function getDoggo() {
 async function showDoggo() {
     const url = await getDoggo();
     if (url) {
-        
+        document.getElementById("doggo-otd").setAttribute("src", url);
     }
 }
 
-document.getElementById("doggo-otd").setAttribute("src", getDoggo());
+showDoggo();
