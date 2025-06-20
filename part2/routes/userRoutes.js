@@ -37,7 +37,7 @@ router.get('/me', (req, res) => {
 
 // POST login
 router.post('/login', async (req, res) => {
-
+  // Get values from the inputs as vairables
   const { username, password } = req.body;
 
   try {
