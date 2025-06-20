@@ -57,7 +57,8 @@ var db = mysql.createPool({
       await db.execute(`
         CREATE TABLE IF NOT EXISTS Dogs (
           dog_id INT AUTO_INCREMENT PRIMARY KEY,
-          username VARCHAR(50),
+          owner_id INT
+          name VARCHAR(50),
           email VARCHAR(50),
           password_hash varchar(255),
           role enum('owner', 'walker')
