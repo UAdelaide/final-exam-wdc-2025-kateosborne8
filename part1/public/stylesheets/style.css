@@ -38,9 +38,9 @@ a {
 }
 
 button {
-  border-radius: 10px;
+  border-radius: 20px;
   background-color: #9878ef;
   color: #f1ebe3;
   border: none;
-  padding: 16px;
+  padding: 6px;
 }
