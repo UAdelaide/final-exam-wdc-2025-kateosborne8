@@ -79,6 +79,11 @@ INSERT INTO Dogs (owner_id, name, size) SELECT user_id AS owner_id, 'Beau' AS na
 
         `);
       }
+
+      
+
+
+
     } catch (err) {
       console.error('Error setting up database. Ensure Mysql is running: service mysql start', err);
     }
